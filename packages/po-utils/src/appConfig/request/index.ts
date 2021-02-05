@@ -1,8 +1,43 @@
-import { RequestConfig } from "./index.d";
 import { message } from "antd";
 import qs from "query-string";
+import {
+  RequestOptionsInit,
+  Context,
+  OnionMiddleware,
+  RequestInterceptor,
+  ResponseInterceptor,
+} from "umi-request";
 
 const TOKEN_INFO = "TOKEN_INFO";
+
+enum ErrorShowType {
+  SILENT = 0,
+  WARN_MESSAGE = 1,
+  ERROR_MESSAGE = 2,
+  NOTIFICATION = 4,
+  REDIRECT = 9,
+}
+
+interface ErrorInfoStructure {
+  success: boolean;
+  data?: any;
+  errorCode?: string;
+  errorMessage?: string;
+  showType?: ErrorShowType;
+  traceId?: string;
+  host?: string;
+  [key: string]: any;
+}
+
+interface RequestConfig extends RequestOptionsInit {
+  errorConfig?: {
+    errorPage?: string;
+    adaptor?: (resData: any, ctx: Context) => ErrorInfoStructure;
+  };
+  middlewares?: OnionMiddleware[];
+  requestInterceptors?: RequestInterceptor[];
+  responseInterceptors?: ResponseInterceptor[];
+}
 
 const codeMessage: {
   [code: string]: string;
@@ -24,7 +59,7 @@ const codeMessage: {
   504: "网关超时。",
 };
 
-export const request: RequestConfig = {
+export default {
   errorConfig: {
     adaptor: (resData) => {
       return {
@@ -93,4 +128,4 @@ export const request: RequestConfig = {
       return res;
     },
   ],
-};
+} as RequestConfig;
