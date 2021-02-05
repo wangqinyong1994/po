@@ -12,5 +12,6 @@
   "dependencies": {
     "antd": "^4.12.2",
     "umi": "^3.3.7"
-  }
+  },
+  "gitHead": "66a0afbb44e507df7a20677fe36ae37355bb0779"
 }

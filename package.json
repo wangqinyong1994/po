@@ -4,7 +4,14 @@
   "devDependencies": {
     "lerna": "^3.22.1"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangqinyong1994/po.git"
+  }
 }

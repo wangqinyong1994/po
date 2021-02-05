@@ -2,6 +2,8 @@ import { RequestConfig } from "./index.d";
 import { message } from "antd";
 import qs from "query-string";
 
+const TOKEN_INFO = "TOKEN_INFO";
+
 const codeMessage: {
   [code: string]: string;
 } = {
@@ -34,7 +36,7 @@ export const request: RequestConfig = {
   middlewares: [],
   requestInterceptors: [
     (url, options) => {
-      const tokenInfo = JSON.parse(localStorage.getItem("TOKEN_INFO") || "{}");
+      const tokenInfo = JSON.parse(localStorage.getItem(TOKEN_INFO) || "{}");
       if (tokenInfo && tokenInfo.accessToken) {
         options.headers = {
           Authorization: tokenInfo.accessToken,
