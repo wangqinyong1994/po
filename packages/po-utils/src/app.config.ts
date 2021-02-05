@@ -82,6 +82,7 @@ export const request: RequestConfig = {
         return res;
       } else {
         if (response.status === 401) {
+          // 401 跳转至登录页
           setTimeout(() => {
             window.location.replace("/login");
           }, 1500);
