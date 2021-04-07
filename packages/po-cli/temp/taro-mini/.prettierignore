@@ -1,0 +1,7 @@
+**/*.md
+**/*.svg
+**/*.ejs
+**/*.html
+public/
+node_modules/
+package.json

@@ -1,0 +1,7 @@
+{
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "js/ts.implicitProjectConfig.checkJs": true,
+  "eslint.validate": ["javascript", "javascriptreact"]
+}
