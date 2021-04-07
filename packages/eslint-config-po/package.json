@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-po",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "eslint共享配置",
   "author": "wangqinyong1994 <574812662@qq.com>",
   "homepage": "https://github.com/wangqinyong1994/po#readme",
@@ -28,7 +28,6 @@
   "peerDependencies": {
     "eslint": "*"
   },
-  "devDependencies": {},
   "gitHead": "bd9f9fbc68300f83bd86053995c7191957f29056",
   "dependencies": {
     "eslint-config-airbnb": "^18.2.1",
