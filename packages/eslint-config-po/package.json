@@ -13,7 +13,7 @@
     "index.js"
   ],
   "publishConfig": {
-    "registry": "http://10.45.53.230:8084/nexus/repository/cb-npm/"
+    "access": "public"
   },
   "repository": {
     "type": "git",
@@ -35,5 +35,8 @@
     "eslint-plugin-react": "^7.23.1",
     "eslint-plugin-react-hooks": "^4.2.0"
   },
-  "gitHead": "873f06a8addc02cb50821c438dd1e80e139835ed"
+  "gitHead": "bd9f9fbc68300f83bd86053995c7191957f29056",
+  "dependencies": {
+    "undefined": "/Users/ngwang/Desktop/demospace/gaoji/lernatest/wqd"
+  }
 }

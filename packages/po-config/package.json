@@ -14,7 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "antd": "^4.12.2",
-    "umi": "^3.3.7"
+    "umi": "^3.3.7",
+    "undefined": "/Users/ngwang/Desktop/demospace/gaoji/lernatest/wqd"
   },
   "repository": {
     "type": "git",
