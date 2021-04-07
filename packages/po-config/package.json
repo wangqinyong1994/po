@@ -1,6 +1,6 @@
 {
   "name": "@poman/po-config",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "@poman/po-config",
   "main": "index.js",
   "publishConfig": {
