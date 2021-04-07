@@ -26,22 +26,15 @@
     "url": "https://github.com/wangqinyong1994/po/issues"
   },
   "peerDependencies": {
-    "eslint": "*",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.23.1",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint": "*"
   },
-  "devDependencies": {
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.23.1",
-    "eslint-plugin-react-hooks": "^4.2.0"
-  },
+  "devDependencies": {},
   "gitHead": "bd9f9fbc68300f83bd86053995c7191957f29056",
   "dependencies": {
-    "undefined": "/Users/ngwang/Desktop/demospace/gaoji/lernatest/wqd"
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.1",
+    "eslint-plugin-react-hooks": "^4.2.0"
   }
 }
