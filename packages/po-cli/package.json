@@ -34,15 +34,6 @@
     "commander": "^7.0.0",
     "download-git-repo": "^3.0.2",
     "ejs": "^3.1.6",
-    "fs-extra": "^9.1.0",
-    "glob": "^7.1.6",
-    "inquirer": "^7.3.3",
-    "lodash": "^4.17.20",
-    "ora": "^5.3.0",
-    "undefined": "/Users/ngwang/Desktop/demospace/gaoji/lernatest/wqd",
-    "yargs": "^16.2.0"
-  },
-  "peerDependencies": {
     "eslint": "*",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.1.0",
@@ -50,7 +41,14 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.23.1",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "fs-extra": "^9.1.0",
+    "glob": "^7.1.6",
+    "inquirer": "^7.3.3",
+    "lodash": "^4.17.20",
+    "ora": "^5.3.0",
+    "yargs": "^16.2.0"
   },
+  "peerDependencies": {},
   "gitHead": "bd9f9fbc68300f83bd86053995c7191957f29056"
 }
