@@ -2,7 +2,7 @@
  * @Author: ngwang
  * @Date: 2021-02-08 15:07:59
  * @LastEditors: ngwang
- * @LastEditTime: 2021-04-07 15:54:43
+ * @LastEditTime: 2021-04-08 11:29:59
  */
 const process = require("process");
 const path = require("path");
@@ -14,7 +14,7 @@ const inquirer = require("inquirer");
 
 module.exports = (options) => {
   inquirer.prompt([]);
-  const destPath = path.resolve(__dirname, "../../temp");
+  const destPath = process.cwd();
   const spinner = ora("下载模版中...").start();
   console.log("options:", options);
   // TODO: 选择不同模板

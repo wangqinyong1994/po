@@ -1,4 +1,10 @@
 #!/usr/bin/env node
+/*
+ * @Author: ngwang
+ * @Date: 2021-02-08 14:10:12
+ * @LastEditors: ngwang
+ * @LastEditTime: 2021-04-08 18:22:15
+ */
 
 const program = require("commander");
 const process = require("process");
@@ -10,12 +16,15 @@ program.version(pkg.version);
 
 program.usage("<command>");
 
+program.option("-s <source>", "文件来源");
+
 program
   .command("add")
-  .description("Add a new template")
-  .alias("a")
+  .description("新增自定义模版")
   .action(() => {
-    require("../src/commands/add")();
+    require("../src/commands/add")({
+      src: program.opts().s,
+    });
   });
 
 program
@@ -28,9 +37,10 @@ program
     require("../src/commands/create/index")({ options });
   });
 
+// 展示自定义模版
 program
   .command("list")
-  .description("List all the templates")
+  .description("显示所有目前的自定义模版")
   .alias("l")
   .action(() => {
     require("../src/commands/list")();
@@ -38,18 +48,27 @@ program
 
 program
   .command("init")
-  .description("Generate a new project")
+  .description("初始化项目")
   .alias("i")
   .action(() => {
     require("../src/commands/init")();
   });
 
+// 删除自定义模版
 program
   .command("delete")
-  .description("Delete a template")
+  .description("删除自定义模版")
   .alias("d")
   .action(() => {
     require("../src/commands/delete")();
+  });
+
+// 创建项目eslint prettier editorconfig 下载eslint-config-po
+program
+  .command("standard")
+  .description("创建项目eslint prettier editorconfig & 下载eslint-config-po")
+  .action(() => {
+    require("../src/commands/standard")();
   });
 
 program.parse(process.argv);
