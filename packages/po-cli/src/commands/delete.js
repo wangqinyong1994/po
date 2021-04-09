@@ -2,7 +2,7 @@
  * @Author: ngwang
  * @Date: 2021-02-08 15:08:06
  * @LastEditors: ngwang
- * @LastEditTime: 2021-04-08 16:43:13
+ * @LastEditTime: 2021-04-09 11:10:31
  */
 const path = require("path");
 const { execSync } = require("child_process");
@@ -35,7 +35,6 @@ module.exports = async () => {
         exit(1);
       } else {
         const spinner = ora(`${chalk.yellow("正在删除")} 🚗🚗🚗...`).start();
-
         tplName.forEach((name) => {
           const tplPath = `${source}/${name}`;
           execSync(`rm -rf ${tplPath}`, {
@@ -46,6 +45,7 @@ module.exports = async () => {
       }
     }
   } catch (error) {
-    spinner.fail(`${chalk.red("fail")} 💥💥💥💥💥💥`);
+    console.log(`${chalk.red("fail")} 💥💥💥💥💥💥`);
+    exit(1);
   }
 };

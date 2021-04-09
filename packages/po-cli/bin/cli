@@ -3,7 +3,7 @@
  * @Author: ngwang
  * @Date: 2021-02-08 14:10:12
  * @LastEditors: ngwang
- * @LastEditTime: 2021-04-08 18:22:15
+ * @LastEditTime: 2021-04-09 14:45:04
  */
 
 const program = require("commander");
@@ -16,7 +16,9 @@ program.version(pkg.version);
 
 program.usage("<command>");
 
-program.option("-s <source>", "文件来源");
+program
+  .option("-s <source>", "文件来源位置")
+  .option("-d <dest>", "文件输出位置");
 
 program
   .command("add")
@@ -24,6 +26,15 @@ program
   .action(() => {
     require("../src/commands/add")({
       src: program.opts().s,
+    });
+  });
+
+program
+  .command("get")
+  .description("获取自定义模版")
+  .action(() => {
+    require("../src/commands/get")({
+      dest: program.opts().d,
     });
   });
 

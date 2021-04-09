@@ -8,7 +8,7 @@ const fse = require("fs-extra");
 const path = require("path");
 const chalk = require("chalk");
 
-module.exports = async (options) => {
+module.exports = async () => {
   const source = path.resolve(__dirname, "./create/templates/diy_tpls");
   try {
     const tpls = await fse.readdirSync(source, {
