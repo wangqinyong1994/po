@@ -2,7 +2,7 @@
  * @Author: ngwang
  * @Date: 2021-02-08 15:08:06
  * @LastEditors: ngwang
- * @LastEditTime: 2021-04-09 15:46:54
+ * @LastEditTime: 2021-04-12 18:24:48
  */
 const path = require("path");
 const { execSync } = require("child_process");
@@ -17,7 +17,11 @@ module.exports = async ({ dest }) => {
   const destPos = process.cwd() + "/" + dest;
   // 获取文件 下载源目录
   const source = path.resolve(__dirname, "./create/templates/diy_tpls");
-  console.log("destPos: ", destPos);
+
+  const destFiles = (await fse.readdir(destPos)).map((filePath) =>
+    filePath.slice(0, filePath.lastIndexOf("."))
+  );
+
   try {
     if (!fse.existsSync(destPos)) {
       // 目录不存在报错
@@ -45,7 +49,6 @@ module.exports = async ({ dest }) => {
         },
       ]);
 
-      console.log(47, tplName, rename);
       if (!tplName) {
         console.log(`${chalk.red("未选择无自定义模版")}`);
         exit(1);
@@ -76,15 +79,24 @@ module.exports = async ({ dest }) => {
                   );
                   return false;
                 }
+                if (destFiles.includes(val)) {
+                  console.log(
+                    `${chalk.red("文件或文件夹名称已存在")} 💥💥💥💥💥💥`
+                  );
+                  return false;
+                }
                 return true;
               },
             },
           ]);
           const sourceFile = `${source}/${tplName}`;
-          const destFile = `${destPos}/${tplName}`;
+          const sourceCopyFile = `${source}/_${tplName}`;
           const extname = path.extname(sourceFile);
-          execSync(`cp -r ${sourceFile} ${destPos}`);
-          fse.renameSync(destFile, `${destPos}/${name}${extname}`);
+          const resFile = `${source}/${name}${extname}`;
+          execSync(`cp -r ${sourceFile} ${sourceCopyFile}`);
+          fse.renameSync(sourceCopyFile, resFile);
+          execSync(`cp -r ${resFile} ${destPos}`);
+          execSync(`rm -rf ${resFile}`);
           console.log(`${chalk.green("success")} 🎆🎆🎆🎆🎆🎆`);
         }
       }
