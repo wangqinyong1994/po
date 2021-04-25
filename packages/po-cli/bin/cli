@@ -1,11 +1,4 @@
 #!/usr/bin/env node
-/*
- * @Author: ngwang
- * @Date: 2021-02-08 14:10:12
- * @LastEditors: ngwang
- * @LastEditTime: 2021-04-09 14:45:04
- */
-
 const program = require("commander");
 const process = require("process");
 const yargs = require("yargs");
@@ -41,7 +34,6 @@ program
 program
   .command("create")
   .description("create page")
-  .alias("cre")
   .action(() => {
     const argv = yargs.argv._.slice(1);
     const options = qs.parse(argv.join("&"));
@@ -52,7 +44,6 @@ program
 program
   .command("list")
   .description("显示所有目前的自定义模版")
-  .alias("l")
   .action(() => {
     require("../src/commands/list")();
   });
@@ -60,7 +51,6 @@ program
 program
   .command("init")
   .description("初始化项目")
-  .alias("i")
   .action(() => {
     require("../src/commands/init")();
   });
@@ -69,7 +59,6 @@ program
 program
   .command("delete")
   .description("删除自定义模版")
-  .alias("d")
   .action(() => {
     require("../src/commands/delete")();
   });
